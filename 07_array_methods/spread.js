@@ -21,6 +21,13 @@ let myobj = {
 };
 // console.log(...myobj);   // Error 
 
+// +++++++++++++++++ concat Array using spread  operators ++++++++++++
+let heros = ['salaman', 'shaharukh', 'ranveer'];
+let luckyNum = [5, 7, 8, 2];
+
+let combo = [...heros, ...luckyNum];
+console.log(`combo => `, combo);               // combo => [ 'salaman', 'shaharukh', 'ranveer', 5, 7, 8, 2 ]
+
 
 // ************************** find min using ... spread operators *********
 
@@ -29,19 +36,13 @@ console.log(Math.min(12, 45, 776, 54, 22, 11, 44, 66));               //11
 let num = [12, 34, 56, 3, 78, 99, 43, 53, 123, 434];                    //3
 console.log(Math.min(...num));
 
+
+
 //----------------------------------------------------
 let num1 = [10, 20, 30, 40, 50];
 console.log(...num1);                       // 10 20 30 40 50
 console.log(10, 20, 30, 40, 50);            // 10 20 30 40 50
 console.log(..."SHIVAGUPTA");               // S H I V A G U P T A
-
-
-
-
-
-
-
-
 
 
 
@@ -81,3 +82,18 @@ console.log(...num_str);                   // 12 34 56 78 9 shiva gupta ritika
 
 console.log(num_str.join());                // '12,34,56,78,9,shiva,gupta,ritika'
 console.log(num_str.join(''));              // '123456789shivaguptaritika'
+
+
+
+// ****************** spread (object literals) ******************
+let data = {
+    name: 'shiva',
+    last: 'gupta',
+    age: 25,
+    isLogIn: true
+};
+
+let userInfo = { ...data, id: 204, fav: 'JavaScript' };
+
+console.log(data);                         // { name: 'shiva', last: 'gupta', age: 25, isLogIn: true }
+console.log(userInfo);                      // {name: 'shiva',last: 'gupta',age: 25 , isLogIn: true , id: 204 , fav: 'JavaScript'}
