@@ -56,5 +56,10 @@ console.log(largeNum("Shiva", 12, 44, 667, 332, 123));
 
 
 
-
+function sum(a, b, c, d) {
+    console.log(arguments);
+    console.log(arguments.length);
+    console.log(arguments[2]);
+}
+sum(1, 5, 7, 8, 10);
 
