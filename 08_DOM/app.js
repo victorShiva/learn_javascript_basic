@@ -175,7 +175,7 @@ console.log(p);
 p.innerText = 'this is a paragraph';
 
 let body = document.querySelector('body');
-body.appendChild(p);                        //add element in body last
+body.appendChild(p);                        //add element in body tag last-one
 
 box = document.querySelector('.box');
 console.log(box);
