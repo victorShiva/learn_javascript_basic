@@ -1,0 +1,28 @@
+
+body{
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+div{
+    height: 100px;
+    width: 500px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 2rem;
+}
+button{
+    font-size: 1.2rem;
+    border: none;
+    background-color: grey;
+    color: aliceblue;
+    cursor: pointer;
+    border: 2px solid black;
+}
+button:hover{
+    background-color: rgb(95, 88, 88);
+}
+button:active{
+    background-color: rgb(220, 217, 217);
+    color: black;
+}
