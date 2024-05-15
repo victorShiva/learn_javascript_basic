@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text-editor</title>
+</head>
+
+<body>
+    <h1>My Text Editor</h1>
+    <p></p>
+    <input type="text" name="" id="userText" placeholder="Type Somethings">
+    <script>
+        let input = document.querySelector('#userText');
+        let para = document.querySelector('p');
+        input.addEventListener("input", function () {
+            para.innerText = this.value;                    //input.value
+        })
+    </script>
+</body>
+
+</html>
