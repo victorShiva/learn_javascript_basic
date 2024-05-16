@@ -1,0 +1,12 @@
+body{
+    height: 12000px;
+}
+
+ul li{
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-shadow: 5px 5px 5px;
+}
+#btn1{
+    position: fixed;
+}
