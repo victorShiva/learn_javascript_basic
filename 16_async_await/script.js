@@ -18,7 +18,7 @@
 //     throw `Some Random Error Occure`;           // when throw random error
 //     return `Hello `;
 // }
-// console.log(greet());
+// console.log(greet());                       //Promise {<rejected>: 'Some Random Error Occure'}
 
 
 
@@ -26,14 +26,14 @@
 //     return `Hello `;
 // }
 
-// greet()
+// let promise = greet()
 //     .then((res) => {
-//         console.log(`promise was resolved ${res}`);                    //  Hello
+//         console.log(`promise was resolved ${res}`);                    // promise was resolved Hello
 //     })
 //     .catch((error) => {
 //         console.log(error);
 //     })
-
+// console.log(promise);                                       //Promise {<pending>}
 
 
 // async function greet() {
@@ -41,14 +41,14 @@
 //     return `Hello `;
 // }
 
-// greet()
+// let promise = greet()
 //     .then((res) => {
 //         console.log(res);
 //     })
 //     .catch((error) => {
 //         console.log(`Promise was rejected ${error}`);                 // Promise was rejected  reference error
 //     })
-
+// console.log(promise);                                                 //Promise {<pending>}
 
 
 
@@ -103,12 +103,29 @@
 
 
 
+// function getNum() {
+//     return new Promise((resolve, reject) => {
+//         let randNum = Math.floor(Math.random() * 10) + 1;
+//         console.log(randNum);
+//         return randNum;
+//     })
+// }
+// async function NumIs() {
+//     console.log(getNum());                              //Promise {<pending>}
+// }
+// let promise = NumIs();
+// console.log(promise);                                   //Promise {<fulfilled>: undefined}
+
+
+
+
 // function num() {
 //     setTimeout(() => {
+//         console.log("Hello");
 //         return 5;
 //     }, 2000);
 // };
-// // console.log(num());                 // undefined
+// console.log(num());                 // undefined
 
 // async function add() {
 //     await (5 + num());
@@ -117,7 +134,7 @@
 // console.log(result);                    // promise {<pending>}
 
 // setTimeout(() => {
-//     console.log(result);                // pomise{undefined}
+//     console.log(result);                // Promise {<fulfilled>: undefined}
 // }, 6000)
 
 
@@ -132,6 +149,7 @@
 //     })
 // };
 // let number = num();                     // promise {<pending>}
+// console.log(number);
 
 // setTimeout(() => {
 //     console.log(number);                // pomise{<pending>}
@@ -149,6 +167,7 @@
 //     })
 // };
 // let number = num();                     // promise {<pending>}
+// console.log(number);
 // number
 //     .then(res => console.log(res))
 //     .catch(err => console.log(err))
@@ -182,7 +201,7 @@
 // let number = num();                     // promise {<pending>}
 
 // setTimeout(() => {
-//     console.log(number);                // pomise{5}
+//     console.log(number);                //Promise {<fulfilled>: 5}
 // }, 6000)
 
 
@@ -203,6 +222,52 @@
 //     await num();
 // }
 // add();
+
+
+
+
+
+// function num() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             let randNum = Math.floor(Math.random() * 10) + 1;
+//             console.log(randNum);
+//             resolve("Hello Good Morning");
+//         }, 1000);
+//     })
+// };
+// async function add() {
+//     await num();
+//     await num();
+//     await num();
+// }
+// add()
+//     .then(res => console.log(res))                      //undefined
+//     .catch(err => console.log(err))
+
+
+
+
+
+
+// function num() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             let randNum = Math.floor(Math.random() * 10) + 1;
+//             console.log(randNum);
+//             reject("Hello Good Morning");                   //print one time
+//         }, 1000);
+//     })
+// };
+// async function add() {
+//     await num();
+//     await num();
+//     await num();
+// }
+// add()
+//     .then(res => console.log(res))
+//     .catch(err => console.log(err))                             //Hello Good Morning
+
 
 
 
@@ -293,29 +358,29 @@
 
 
 
-function num() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            let randNum = Math.floor(Math.random() * 10) + 1;
-            if (randNum < 3) {
-                reject("number is less < 3");
-                console.log(randNum);
-            } else {
-                console.log(randNum);
-                resolve();
-            }
-        }, 1000);
-    })
-};
-async function add() {
-    try {
-        await num();
-        await num();
-        await num();
-        await num();
-    } catch (error) {
-        console.log(error);
-    }
-    console.log(`Hey this is last execution`);
-}
-add();
+// function num() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             let randNum = Math.floor(Math.random() * 10) + 1;
+//             if (randNum < 3) {
+//                 reject("number is less < 3");
+//                 console.log(randNum);
+//             } else {
+//                 console.log(randNum);
+//                 resolve();
+//             }
+//         }, 1000);
+//     })
+// };
+// async function add() {
+//     try {
+//         await num();
+//         await num();
+//         await num();
+//         await num();
+//     } catch (error) {
+//         console.log(error);
+//     }
+//     console.log(`Hey this is last execution`);
+// }
+// add();
