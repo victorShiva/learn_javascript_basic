@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Axios Quey Updating </h2>
+    <br>
+    <input type="text" placeholder="Enter Country">
+    <button>Search</button>
+    <ol id="list"></ol>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+
+
+    <script>
+        let url = 'http://universities.hipolabs.com/search?country=';
+
+        async function getColleges(country) {
+            try {
+                let res = await axios.get(url + country);
+                return res.data;
+            } catch (error) {
+                console.log(error);
+                return [];
+            }
+        }
+
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', async () => {
+            let country = document.querySelector('input').value;
+            let colleges = await getColleges(country);
+            show(colleges)
+        })
+
+        function show(colleges) {
+            let list = document.getElementById('list');
+            list.innerText = "";
+
+            for (const coll of colleges) {
+                let li = document.createElement('li');
+                li.innerText = coll.name;
+                list.appendChild(li);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios</title>
+</head>
+
+<body>
+    <h1>Cat Image</h1>
+    <div>
+        <img src="" alt="catImage">
+    </div>
+    <button>Get Image</button>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+
+
+
+    <script>
+        let img = document.querySelector('div img');
+        let btn = document.querySelector('button');
+
+        btn.addEventListener('click', async function () {
+            let image = await getImage();
+            img.setAttribute('src', image);
+            console.log(image);
+        })
+
+        async function getImage() {
+            try {
+                let res = await fetch('https://api.thecatapi.com/v1/images/search');
+                let data = await res.json();
+                return data[0].url;
+
+
+
+                // let res = await axios.get('https://api.thecatapi.com/v1/images/search');
+                // return res.data[0].url;
+            } catch (e) {
+                return "No Found Image";
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
