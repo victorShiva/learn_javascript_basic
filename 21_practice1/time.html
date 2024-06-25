@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get current time</title>
+</head>
+
+<body>
+    <h2></h2>
+    <button type="button">Show-Time</button>
+</body>
+<script>
+    const button = document.querySelector('button');
+    const timeZone = document.querySelector('h2');
+
+    button.addEventListener('click', () => {
+        setInterval(getTime, 1000);
+    });
+
+    function getTime() {
+        let localTime = new Date();
+        timeZone.innerHTML = `${localTime.toLocaleTimeString()}`;
+    }
+</script>
+
+</html>

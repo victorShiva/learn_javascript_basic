@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Position</title>
+</head>
+
+<body>
+    <h1>Hey there is My Current Position!</h1>
+    <div>
+        <button type="button" autofocus>Location</button>
+    </div>
+    <p></p>
+</body>
+<script>
+    const button = document.querySelector('button');
+    const address = document.querySelector("p");
+    button.addEventListener("click", () => {
+        const result = navigator.geolocation.getCurrentPosition(gotLocation, failedToGet);
+        async function gotLocation(position) {
+            console.log(position);
+            const lati = position.coords.latitude;
+            const longi = position.coords.longitude;
+            const currentLoc = await getZone(lati, longi);
+            console.log(currentLoc);
+            address.innerHTML = `<b>${currentLoc.location.name}</b> , <i>${currentLoc.location.region} , ${currentLoc.location.country}</i>`
+        }
+        function failedToGet() {
+            console.log(`There was some issues`);
+        }
+    })
+
+    async function getZone(lati, longi) {
+        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=e3e30e7185744568a6961313242506&q=${lati},${longi}&api=yes`);
+
+        const data = await response.json();
+        return data;
+    }
+    window.addEventListener('load', (e) => {
+        e.stopPropagation();
+    })
+
+</script>
+
+</html>

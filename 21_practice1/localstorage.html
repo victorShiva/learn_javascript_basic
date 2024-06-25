@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage - </title>
+
+</head>
+
+<body>
+    <h1>Hey there is "<span id="user"></span>" from Local Storage</h1>
+    <div>
+        <input type="text" placeholder="Add value in local storage">
+        <button type="button">Search</button>
+    </div>
+</body>
+<script>
+    const input = document.querySelector('input[type="text"]');
+    const button = document.querySelector('button');
+    const username = document.querySelector('#user');
+
+    button.addEventListener('click', function () {
+        const value = input.value;
+        localStorage.setItem("user", value);
+        location.reload();
+    })
+
+    window.addEventListener('load', function () {
+        const user = localStorage.getItem('user');
+        username.innerHTML = user;
+    })
+
+</script>
+
+</html>
