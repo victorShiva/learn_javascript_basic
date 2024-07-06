@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Api</title>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <script>
+        async function getImage() {
+            let response = await axios.get("https://api.thecatapi.com/v1/images/search");
+            console.log(response);
+        }
+        getImage();
+    </script>
+</body>
+
+</html>

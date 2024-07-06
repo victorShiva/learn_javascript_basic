@@ -79,6 +79,7 @@
         btn.addEventListener('click', async () => {
             let state = document.querySelector('input').value;
             let colleges = await getColleges(state);
+            console.log(colleges);
             show(colleges);
         })
 

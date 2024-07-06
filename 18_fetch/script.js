@@ -8,7 +8,7 @@
 // fetch(url)
 //     .then(res => {
 //         console.log(res);
-//         // console.log(res.json());                //Promise {<fulfilled>:object} 
+//         // console.log(res.json());                //Promise {<fulfilled>:object}
 //         return res.json();
 //     })
 //     .then(data => {
@@ -45,24 +45,24 @@
 
 
 
-let url = 'https://catfact.ninja/fact';
+// let url = 'https://catfact.ninja/fact';
 
-async function getFacts() {
-    try {
-        let res = await fetch(url);
-        let data = await res.json();
-        console.log(data);
-        console.log(data.fact);
-        let res2 = await fetch(url);
-        let data2 = await res2.json();
-        console.log(data2);
-        console.log(data2.fact);
-    } catch (err) {
-        console.log(err);
-    }
-    console.log(`end execution`);
-}
-console.log(getFacts());
+// async function getFacts() {
+//     try {
+//         let res = await fetch(url);
+//         let data = await res.json();
+//         console.log(data);
+//         console.log(data.fact);
+//         let res2 = await fetch(url);
+//         let data2 = await res2.json();
+//         console.log(data2);
+//         console.log(data2.fact);
+//     } catch (err) {
+//         console.log(err);
+//     }
+//     console.log(`end execution`);
+// }
+// console.log(getFacts());
 
 
 
