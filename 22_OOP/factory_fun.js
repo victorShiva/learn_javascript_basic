@@ -49,4 +49,6 @@ person1.getInfo();
 person2.getInfo();
 
 console.log(person1.getInfo == person2.getInfo);            // true
+console.log(person1.constructor);
+console.log(person2.constructor);
 

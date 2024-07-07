@@ -283,15 +283,15 @@ function num() {
 };
 async function add() {
     let first = await num();
-    console.log("first",first);                         //first Hello Good Morning
+    console.log("first", first);                         //first Hello Good Morning
     let second = await num();
-    console.log("second",second);                       //second Hello Good Morning
+    console.log("second", second);                       //second Hello Good Morning
     let last = await num();
-    console.log("last",last)                            //last Hello Good Morning
+    console.log("last", last)                            //last Hello Good Morning
 }
 add()
-    .then(res => console.log("res",res))                //res undefined
-    .catch(err => console.log("err",err))
+    .then(res => console.log("res", res))                //res undefined
+    .catch(err => console.log("err", err))
 
 
 
@@ -310,16 +310,16 @@ function num() {
 };
 async function add() {
     let first = await num();
-    console.log("first",first);                         //first Hello Good Morning
+    console.log("first", first);                         //first Hello Good Morning
     let second = await num();
-    console.log("second",second);                       //second Hello Good Morning
+    console.log("second", second);                       //second Hello Good Morning
     let last = await num();
-    console.log("last",last)                            //last Hello Good Morning
+    console.log("last", last)                            //last Hello Good Morning
     return last;
 }
 add()
-    .then(res => console.log("res",res))                //res Hello Good Morning
-    .catch(err => console.log("err",err))
+    .then(res => console.log("res", res))                //res Hello Good Morning
+    .catch(err => console.log("err", err))
 
 
 
